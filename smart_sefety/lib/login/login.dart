@@ -1,134 +1,75 @@
 import 'package:flutter/material.dart';
-import 'package:smart_sefety/login/register.dart';
+// import 'package:smart_sefety/login/register.dart';
 
-class LoginScreen extends StatefulWidget {
+ 
+class MyLoginPage extends StatefulWidget {
+  MyLoginPage({Key key}) : super(key: key);
+ 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _MyLoginPageState createState() => _MyLoginPageState();
 }
-
-class _LoginScreenState extends State<LoginScreen> {
-  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, color: Colors.white,);
-
+ 
+class _MyLoginPageState extends State<MyLoginPage> {
   @override
   Widget build(BuildContext context) {
-    final emailField = TextField(
-      obscureText: false,
-      style: style,
-      decoration: InputDecoration(
-          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Email",
-          hintStyle: style,
-          border:
-          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),suffixIcon: Icon(Icons.email,color: Colors.white,),
-          enabledBorder: const OutlineInputBorder(
-      // width: 0.0 produces a thin "hairline" border
-      borderSide: const BorderSide(color: Colors.white, width: 1.0,style: BorderStyle.solid ),
-    ),),
-
-    );
-    final passwordField = TextField(
-      obscureText: true,
-      style: style,
-      decoration: InputDecoration(
-          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Password",
-          hintStyle: style,
-          border:
-          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),suffixIcon: Icon(Icons.perm_identity,color: Colors.white,),
-        enabledBorder: const OutlineInputBorder(
-          // width: 0.0 produces a thin "hairline" border
-          borderSide: const BorderSide(color: Colors.white, width: 1.0,style: BorderStyle.solid ),))
-    );
-    final loginButon = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color.fromRGBO(1,160,199, 0.5),
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
-
-        child: Text("Login",
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold,)
-        ),
-      ),
-    );
-
-    final registerButon = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color.fromRGBO(16,102,127, 0.5),
-//      color: Color(0xff1066E3),
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => RegisterScreen()),
-          );
-        },
-        child: Text("Register",
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );
-
     return Scaffold(
-      body: ListView(
-        children: <Widget>[
-          Center(
-            child: Container(
-//              color: Colors.white,
-            height: MediaQuery.of(context).size.height,
-              decoration: new BoxDecoration(
-                image: new DecorationImage(
-                  image: new AssetImage("assets/truck_background.jpg"),
-                  fit: BoxFit.cover,
-
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(36.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 15.0,
-//                      child: Image.asset(
-//                        "assets/waiter.png",
-//                        fit: BoxFit.contain,
-//                      ),
-                    ),
-                    Text('Login',style: TextStyle(
-                        color: Colors.white, fontFamily: 'MyFont', fontSize: 50.0
-                    ),),
-                    SizedBox(height: 45.0),
-                    emailField,
-                    SizedBox(height: 25.0),
-                    passwordField,
-                    SizedBox(
-                      height: 35.0,
-                    ),
-                    loginButon,
-                    SizedBox(
-                      height: 15.0,
-                    ),
-                    registerButon,
-                    SizedBox(
-                      height: 60.0,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-    }
+        appBar: AppBar(
+          title: Text("My Firebase App", style: TextStyle(color: Colors.white)),
+        ),
+        body: Container(
+            color: Colors.green[50],
+            child: Center(
+              child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      gradient: LinearGradient(
+                          colors: [Colors.yellow[100], Colors.green[100]])),
+                  margin: EdgeInsets.all(32),
+                  padding: EdgeInsets.all(24),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      buildTextFieldEmail(),
+                      buildTextFieldPassword(),
+                      buildButtonSignIn(),
+                    ],
+                  )),
+            )));
+  }
+ 
+  Container buildButtonSignIn() {
+    return Container(
+        constraints: BoxConstraints.expand(height: 50),
+        child: Text("Sign in",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 18, color: Colors.white)),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16), color: Colors.green[200]),
+        margin: EdgeInsets.only(top: 16),
+        padding: EdgeInsets.all(12));
+  }
+ 
+  Container buildTextFieldEmail() {
+    return Container(
+        padding: EdgeInsets.all(12),
+        decoration: BoxDecoration(
+            color: Colors.yellow[50], borderRadius: BorderRadius.circular(16)),
+        child: TextField(
+            decoration: InputDecoration.collapsed(hintText: "Email"),
+            style: TextStyle(fontSize: 18)));
+  }
+ 
+  Container buildTextFieldPassword() {
+    return Container(
+        padding: EdgeInsets.all(12),
+        margin: EdgeInsets.only(top: 12),
+        decoration: BoxDecoration(
+            color: Colors.yellow[50], borderRadius: BorderRadius.circular(16)),
+        child: TextField(
+            obscureText: true,
+            decoration: InputDecoration.collapsed(hintText: "Password"),
+            style: TextStyle(fontSize: 18)));
+  }
 }
+ 

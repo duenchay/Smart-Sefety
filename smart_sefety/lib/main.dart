@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart'; //นำเข้าmaterial จากflutter
-import 'package:smart_sefety/splash.dart';
-
+import 'package:smart_sefety/slider_widget.dart'; //หน้าslider_widget.dart
 void main() => runApp(MyApp());   //ประกาศ main 
 
 class MyApp extends StatelessWidget {
@@ -9,8 +8,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      home: SplashScreen(),
+      title: 'Smart Sefety',
+      home: SliderWidget(),
     ); //MaterialApp
   }
 }

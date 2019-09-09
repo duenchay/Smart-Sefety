@@ -8,54 +8,70 @@ class SplashScreen extends StatelessWidget {
   static TextStyle style = TextStyle(fontSize: 30.0,);
   //making list of pages needed to pass in IntroViewsFlutter constructor.
   final pages = [
-    PageViewModel(
+    PageViewModel(     //สไลด์อันแรก
         pageColor: const Color(0xFF03A9F4),
-        bubble: Image.asset('assets/trucking.png'),
         body: Text(
-//          'Welcome  to  intro  slider  in  flutter  with  package  intro  views  flutter  latest  update',
-          'Welcome  to  Turtle  Haselfree   booking   of   truck   with   awesome   experience ',style: style,
-        ),
+          'Natural Disaster',
+          
+        ), 
+        bubble: Image.asset('assets/air-hostess.png'),
+        
         title: Text(
           '',
         ),
-        textStyle: TextStyle(fontFamily: 'MyFont', color: Colors.white),
+        textStyle: TextStyle(fontFamily: 'MyFont', color: Colors.black),
         mainImage: Image.asset(
-          'assets/trucking.png',
+          'assets/airplane.png',
           height: 285.0,
           width: 285.0,
           alignment: Alignment.center,
         )),
-    PageViewModel(
+    PageViewModel(    //สไลด์อันที่2
       pageColor: const Color(0xFF8BC34A),
-      iconImageAssetPath: 'assets/truck.png',
       body: Text(
-//        'Amazevalley  intoduce  you  with  the  latest  features  coming  in  flutter  with  practical  demos',
-        'Turtle  work  for  the  truck solution  which  helps  to  all  the  vendors  to  book  a  truck  on  your  fingers',style: style,
+        'Emergency',style: style,
       ),
+      iconImageAssetPath: 'assets/bus-driver.png',
+      
       title: Text(''),
       mainImage: Image.asset(
-        'assets/truck.png',
+        'assets/bus.png',
         height: 285.0,
         width: 285.0,
         alignment: Alignment.center,
       ),
-      textStyle: TextStyle(fontFamily: 'MyFont', color: Colors.white),
+      textStyle: TextStyle(fontFamily: 'MyFont', color: Colors.black),
     ),
-    PageViewModel(
+    PageViewModel(  //สไลด์อันที่3
       pageColor: const Color(0xFF607D8B),
-      iconImageAssetPath: 'assets/10x512tipper_color.png',
       body: Text(
-//        'Amazevalley  give  you  brief  soluton  about  technology  where  you  fall  in  love',
-        'Tutle  is the solution  of  Easy  truck  booking  at  your  doorstep  with  cashless  payment  system.',style: style,
+        'Chart',style: style,
       ),
+      iconImageAssetPath: 'assets/hotel.png',
       title: Text(''),
       mainImage: Image.asset(
-        'assets/10x512tipper_color.png',
+        'assets/waiter.png',
         height: 285.0,
         width: 285.0,
         alignment: Alignment.center,
       ),
-      textStyle: TextStyle(fontFamily: 'MyFont', color: Colors.white),
+      textStyle: TextStyle(fontFamily: 'MyFont', color: Colors.black),
+    ),
+     PageViewModel(    //สไลด์อันที่4
+      pageColor: const Color(0xFF8BC34A),
+      body: Text(
+        'Chats',style: style,
+      ),
+      iconImageAssetPath: 'assets/bus-driver.png',
+      
+      title: Text(''),
+      textStyle: TextStyle(fontFamily: 'MyFont', color: Colors.black),
+      mainImage: Image.asset(
+        'assets/bus.png',
+        height: 285.0,
+        width: 285.0,
+        alignment: Alignment.center,
+      ), 
     ),
   ];
 
@@ -74,7 +90,7 @@ class SplashScreen extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => LoginScreen(),
+                builder: (context) => MyLoginPage(),
               ), //MaterialPageRoute
             );
           },
