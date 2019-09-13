@@ -1,5 +1,6 @@
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-// import 'package:smart_sefety/login/register.dart';
+
 
  
 class MyLoginPage extends StatefulWidget {
@@ -10,14 +11,16 @@ class MyLoginPage extends StatefulWidget {
 }
  
 class _MyLoginPageState extends State<MyLoginPage> {
+  // final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("My Firebase App", style: TextStyle(color: Colors.white)),
-        ),
+        // appBar: AppBar(
+        //   title: Text("My Firebase App", style: TextStyle(color: Colors.white)),
+        // ),
+        // backgroundColor: Color(0xffFFDDDD),
         body: Container(
-            color: Colors.green[50],
+            color: Color(0xffFFDDDD),
             child: Center(
               child: Container(
                   decoration: BoxDecoration(
@@ -32,13 +35,13 @@ class _MyLoginPageState extends State<MyLoginPage> {
                     children: <Widget>[
                       buildTextFieldEmail(),
                       buildTextFieldPassword(),
-                      buildButtonSignIn(),
+                      buildButtonSignIn,
                     ],
                   )),
             )));
   }
  
-  Container buildButtonSignIn() {
+  Container get buildButtonSignIn {
     return Container(
         constraints: BoxConstraints.expand(height: 50),
         child: Text("Sign in",
@@ -48,6 +51,13 @@ class _MyLoginPageState extends State<MyLoginPage> {
             borderRadius: BorderRadius.circular(16), color: Colors.green[200]),
         margin: EdgeInsets.only(top: 16),
         padding: EdgeInsets.all(12));
+  //       Widget buildButtonSignIn() {
+  //         return InkWell(
+  //         onTap: () {
+  //           signIn();
+  //     },
+  //   );
+  // }
   }
  
   Container buildTextFieldEmail() {
@@ -71,5 +81,24 @@ class _MyLoginPageState extends State<MyLoginPage> {
             decoration: InputDecoration.collapsed(hintText: "Password"),
             style: TextStyle(fontSize: 18)));
   }
+  //   signIn(){
+  //   _auth.signInWithEmailAndPassword(
+  //       email: "duenchay.wo.60@ubu.ac.th",
+  //       password: "cwKz5773"
+  //   ).then((user) {
+  //     print("signed in ${user.email}");
+  //   }).catchError((error) {
+  //      print(error);
+  //   });
+  // }
+  // Future checkAuth(BuildContext context) async {
+  //   FirebaseUser user = await _auth.currentUser();
+  //   if (user != null) {
+  //     print("Already singed-in with");
+  //     Navigator.pushReplacement(
+  //         context, MaterialPageRoute(builder: (context) => MyHomePage(user)));
+  //   }
+  // }
+ 
 }
  

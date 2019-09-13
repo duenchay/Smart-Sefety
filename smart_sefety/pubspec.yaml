@@ -17,6 +17,9 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  # firebase_core: 0.3.1+1
+  # firebase_auth: 0.8.1+4
+
   flutter:
     sdk: flutter
   intro_slider: ^2.0.3

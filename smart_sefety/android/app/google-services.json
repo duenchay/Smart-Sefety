@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1053113333248",
+    "firebase_url": "https://smart-sefety.firebaseio.com",
+    "project_id": "smart-sefety",
+    "storage_bucket": "smart-sefety.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053113333248:android:37f2b29895a49eb2e90ae5",
+        "android_client_info": {
+          "package_name": "com.example.smart_sefety"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053113333248-mvfrfcarnad7c5ndok92iuse96knehmi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smart_sefety",
+            "certificate_hash": "104012a1e14b55e416c8adbfb3c091d60e1064b8"
+          }
+        },
+        {
+          "client_id": "1053113333248-bpnfhcpq68rldkrus3r21a1so6utr0b0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIGWJpvzAlDe5mOU4jmRPsH7S-olpf0Fo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1053113333248-bpnfhcpq68rldkrus3r21a1so6utr0b0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

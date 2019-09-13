@@ -15,20 +15,22 @@ class _SliderWidgetState extends State<SliderWidget> {
   void initState() {
     super.initState();
 
-    slides.add( //สไลด์อันแรก
-      new Slide(
-        title: "Natural Disaster",
-        // description:
-        //     "1",
-        styleDescription:
-            TextStyle(height: 1.3, fontSize: 20, color: Colors.black),
+    var black = Colors.black;
+        slides.add( //สไลด์อันแรก
+          new Slide(
+            title: "Natural Disaster",
+            pathImage: "assets/1.png",
+            // description:
+            //     "1",
+            styleDescription:
+                TextStyle(height: 1.3, fontSize: 20, color: black),
         backgroundColor: Color(0xffDFD579),
       ),
     );
     slides.add( //สไลด์อันที่2
       new Slide(
         title: "Emergency",
-        pathImage: "assets/bus.png",
+        pathImage: "assets/sos.png",
         styleDescription:
             TextStyle(fontFamily: 'MyFont',height: 1.3, fontSize: 20, color: Colors.black),
         backgroundColor: Color(0xffDFD579),
@@ -38,6 +40,7 @@ class _SliderWidgetState extends State<SliderWidget> {
     slides.add( //สไลด์อันที่3
       new Slide(
         title: "Chart",
+        pathImage: "assets/chart.png",
         styleDescription:
             TextStyle(height: 1.3, fontSize: 20, color: Colors.black),
         backgroundColor: Color(0xffDFD579),
@@ -46,6 +49,7 @@ class _SliderWidgetState extends State<SliderWidget> {
     slides.add( //สไลด์อันที่4
       new Slide(
         title: "Chats",
+        pathImage: "assets/chart.png",
         styleDescription:
             TextStyle(height: 1.3, fontSize: 20, color: Colors.black),
         backgroundColor: Color(0xffDFD579),
